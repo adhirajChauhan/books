@@ -1,0 +1,16 @@
+.navbar {
+    background-color: #182e49;
+}
+.wrapper {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 0 35px;
+}
+.grid--full {
+  margin-left: 0;
+}
+.site-header--text-links {
+  display: inline-block;
+  font-size: 0.85em;
+  float: right;
+}
