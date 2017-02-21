@@ -10,55 +10,159 @@
     <link href="assets/css/bootstrap-theme.min.css rel="stylesheet"">
     <link href="assets/faws/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 </head>
 
 <body>
 <!-- navbar starts -->
 <nav class="navbar navbar-fixed-top animated fadeInDown delay-0.5s ">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <div class="wrapper">
-        <div class="grid--full">
-        <div class="grid-item large--one-half">
-           <img src="assets/img/img1.png" />
+    <section class="navbar-header-settings">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      <img src="assets/img/img1.png" />
         </div>
-      </div>
-      <section id="signup-login">
-        <div class="grid-item large-one-half text-center large-text-right">
-          <div class="site-header-text-links medium-down-hide">
-            <span class="site-header-meta-links medium-down-hide">
-                <a href="#" id="customer_login">Sign In</a>
-                <span class="site-header-spacer">or</span>
-                <a href="#" id="customer_register">Create an Account</a>
-            </span>
-          </div>
-          <br class="medium-down-hide"/>
-          <form action="/search" method="get" class="search-bar" role="search">
-            <input type="hidden" name="type" value="product" />
-            <input type="search" name="q" value placeholder="Search Books" aria-label="Search Books" />
-            <img src="assets/img/img2.png">
-           </form>
+       <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav navbar-right social">
+        <li id="buybooks"><a href="#">BUY BOOKS</a></li>
+        <li id="sellbooks"><a href="#">SELL BOOKS</a></li>
+        <li id="aboutus"><a href="#">ABOUT US</a></li>
+        <img src="assets/img/img3.png" />
+    </ul>
+    </div>
+    </section>
 
+  </div>
 
-        </div>
+</nav>
 
-      </section>
-
-
-
-
-          </div>
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-       <span class="icon-bar"></span>
-     </button>
 <!-- navbar ends -->
+
+<!-- BS1 searching books by name and course section starts -->
+<div class="row">
+<div id="forbackground">
+   <div class="searchbox">
+
+
+
+
+         <div class="tab-content">
+           <ul class="nav nav-tabs people">
+
+         <li><a data-toggle="tab" href="#menu1">Search by Name</a></li>
+         <li><a data-toggle="tab" href="#menu2">Search by Course</a></li>
+
+         </ul>
+
+             <div id="menu1" class="tab-pane fade in active">
+               <form action="/search" method="get" class="search-bar" role="search">
+                 <input type="hidden" name="type" value="product" />
+                 <input type="search" name="q" value placeholder="Search Books" aria-label="Search Books" id="searchbarinner"  />
+                 <button id="btn-search1" class="btn btn-info" type="button"><i class="fa fa-search fa-fw"></i></button>
+                </form>
+             </div>
+
+
+             <div id="menu2" class="tab-pane fade">
+
+
+
+
+
+                     	<div class="col-md-6">
+                         <div class="form-horizontal">
+                           <div class="input-group">
+
+                             <input id="txtkey" type="text" class="form-control" placeholder="Semester" aria-describedby="ddlsearch">
+                             <span class="input-group-btn">
+                               <div class="ddl-select input-group-btn">
+                                 <select id="ddlsearch" class="selectpicker form-control" data-style="btn-primary">
+
+                                   <option value="google">First</option>
+                                   <option value="yahoo">Second</option>
+                                   <option value="bing">Third</option>
+                                 </select>
+                               </div>
+                               <button id="btn-search" class="btn btn-info" type="button"><i class="fa fa-search fa-fw"></i></button>
+                             </span>
+                           </div>
+                         </div>
+                       </div>
+                       <div class="col-md-6">
+                         <div class="form-horizontal">
+                           <div class="input-group">
+
+                             <input id="txtkey1" type="text" class="form-control" placeholder="Course" aria-describedby="ddlsearch">
+                             <span class="input-group-btn">
+                               <div class="ddl-select input-group-btn">
+                                 <select id="ddlsearch1" class="selectpicker form-control" data-style="btn-primary">
+
+                                   <option value="google">ME</option>
+                                   <option value="yahoo">ECE</option>
+                                   <option value="bing">CSE/IT</option>
+                                 </select>
+                               </div>
+
+                             </span>
+                           </div>
+                         </div>
+                       </div>
+
+
+
+               </div>
+
+
+                           <div id="push"></div>
+             </div>
+
+
+         </div>
+
+
+</div>
+</div>
+</div>
+
+<!-- BS1 searching books by name and course section starts -->
+<script>
+$(document).ready(function(){
+  $('.selectpicker').selectpicker({
+    width:'100px'
+  });
+
+  $('#btn-search').on('click',function(e){
+  	e.preventDefault();
+    var search_engine = $('#ddlsearch option:selected').val(),
+        search_key = $('#txtkey').val(),
+        $sresult = $('#sresult'),
+    	label = '<span class="label label-danger">URL</span>';
+    if(search_engine && search_key){
+      switch (search_engine) {
+        case 'google':
+          $sresult.html(label + ': http://www.google.com/search?q=' + search_key);
+          window.location.href = ('http://www.bing.com/search?q=' + search_key);
+          break;
+        case 'bing':
+          $sresult.html(label + ': http://www.bing.com/search?q=' + search_key);
+          break;
+        case 'yahoo':
+          $sresult.html(label + ': http://search.yahoo.com/search?p=' + search_key);
+          break;
+      }
+    }
+  });
+});</script>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="assets/js/bootstrap.min.js>"></script>
+
 </body>
 </html>

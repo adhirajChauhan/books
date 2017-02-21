@@ -1,16 +1,155 @@
+#myNavbar li {
+  font-size: 18px;
+}
+#myNavbar a {
+  color: white;
+}
 .navbar {
-    background-color: #182e49;
+  background-color: #182e49;
 }
-.wrapper {
-  max-width: 1060px;
-  margin: 0 auto;
-  padding: 0 35px;
+.navbar-header-settings {
+padding-left: 200px;
+padding-right: 200px;
 }
-.grid--full {
-  margin-left: 0;
+#buybooks {
+  margin-right: 111px;
+  padding-top: 22px;
 }
-.site-header--text-links {
-  display: inline-block;
-  font-size: 0.85em;
-  float: right;
+#sellbooks {
+    margin-right: 111px;
+    padding-top: 22px;
+}
+#aboutus {
+  margin-right: 100px;
+  padding-top: 22px;
+}
+.searchbox {
+  height: 155px;
+  width: 600px;
+  background-color:rgba(24, 46, 73, 1);
+  position: relative;
+  left: 33%;
+  top: 60%;
+  border-radius: 5px;
+}
+#forbackground {
+  background: url("../img/img6.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat-x;
+  height: 620px;
+  width: 100%;
+}
+.btn{
+border-radius: 20px;
+font-size: 20px;
+font-weight: bold;
+width: 240%;
+}
+.btn:hover
+{
+background-image:none !important;
+background-color:rgba(24, 46, 73, 1) !important;
+}
+.btn-success {
+  margin-top: 15px;
+}
+.btnbycourse {
+  margin-left: 145px;
+}
+.search-bar {
+  margin-top: 50px;
+  margin-left: 20px;
+  padding-right: 400px;
+
+}
+#searchbarinner {
+  padding-right: 300px;
+  border-radius: 5px;
+  padding-top: 5px;
+}
+.search-bar img {
+  position:relative;
+  left: 493px;
+  bottom: 25px;
+  background: #449d44;
+  border-radius: 15px;
+}
+.bs-example {
+  display: inline;
+}
+
+
+
+.ddl-title{
+  background-color:#5bc0de !important;
+  color:#fff !important;
+  font-style:italic;
+  font-size:80%;
+}
+
+.ddl-select.input-group-btn:first-child>.btn-group:not(:first-child)>.btn {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+#btn-search {
+  width: 40px;
+  left: 377px;
+  top: 7px;
+  border-radius: 5px;
+  margin-left: 0px;
+  position: relative;
+}
+#btn-search1 {
+  width: 40px;
+  margin-left: 500px;
+  position: relative;
+  bottom: 30px;
+  height: 31px;
+
+}
+.selectpicker {
+  padding-right: 4px;
+  padding-left: 12px;
+  height: 34px;
+}
+#txtkey {
+  width: 126px;
+  margin-top: 48px;
+  left: 29px;
+}
+#txtkey1 {
+  right: 20px;
+  height: 34px;
+  padding-right: 7px;
+  margin-right: 0px;
+  top: 48px;
+  width: 150px;
+}
+
+#ddlsearch {
+  padding-right: 3px;
+  padding-left: 12px;
+  left: 30px;
+  height: 34px;
+  width: 22px;
+  margin-right: 396px;
+  top: 41px;
+  right: 113px;
+}
+#ddlsearch1 {
+  right: 113px;
+  top: 48px;
+}
+
+.active a {
+    padding-right: 15px;
+    height: 42px;
+    width: 307px;
+    margin-left: 0px;
+    border-left-width: 1px;
+}
+.people a{
+  color: white;
 }
